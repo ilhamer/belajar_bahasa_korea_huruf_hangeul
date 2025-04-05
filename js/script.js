@@ -147,54 +147,168 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('total-cards').textContent = flashcards.length;
     }
 
-// 1. Pertahankan event listener existing Anda
-document.getElementById('prev-card').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
-    updateFlashcard();
-    updateProgressIndicator(); // Tambahkan ini
-});
+    // 1. Pertahankan event listener existing Anda
+    document.getElementById('prev-card').addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
+        updateFlashcard();
+        updateProgressIndicator(); // Tambahkan ini
+    });
 
-document.getElementById('next-card').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex + 1) % flashcards.length;
-    updateFlashcard();
-    updateProgressIndicator(); // Tambahkan ini
-});
+    document.getElementById('next-card').addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+        updateFlashcard();
+        updateProgressIndicator(); // Tambahkan ini
+    });
 
-// 2. Fungsi updateProgressIndicator (baru)
-function updateProgressIndicator() {
-    document.getElementById('current-card').textContent = currentCardIndex + 1;
-    document.getElementById('total-cards').textContent = flashcards.length;
-}
-
-// 3. Fungsi shuffleCards (modifikasi)
-function shuffleCards() {
-    // Acak array tanpa reference ke original
-    const shuffled = [...flashcards];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    // 2. Fungsi updateProgressIndicator (baru)
+    function updateProgressIndicator() {
+        document.getElementById('current-card').textContent = currentCardIndex + 1;
+        document.getElementById('total-cards').textContent = flashcards.length;
     }
-    flashcards = shuffled;
-    currentCardIndex = 0;
-    updateFlashcard();
-    updateProgressIndicator();
-    
-    // Animasi tombol
-    const shuffleBtn = document.getElementById('shuffle-btn');
-    shuffleBtn.style.transform = 'rotate(360deg)';
-    setTimeout(() => shuffleBtn.style.transform = '', 500);
-}
 
-// 4. Panggil updateProgressIndicator saat inisialisasi
-function initFlashcards() {
-    flashcards = hangeulData.map(item => ({
-        char: item.karakter,
-        romaji: item.romanisasi,
-        audio: item.audio
-    }));
-    updateProgressIndicator(); // Tambahkan ini
-    updateFlashcard();
-}
-   // Di akhir file
-   document.getElementById('shuffle-btn').addEventListener('click', shuffleCards);
+    // 3. Fungsi shuffleCards (modifikasi)
+    function shuffleCards() {
+        // Acak array tanpa reference ke original
+        const shuffled = [...flashcards];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        flashcards = shuffled;
+        currentCardIndex = 0;
+        updateFlashcard();
+        updateProgressIndicator();
+
+        // Animasi tombol
+        const shuffleBtn = document.getElementById('shuffle-btn');
+        shuffleBtn.style.transform = 'rotate(360deg)';
+        setTimeout(() => shuffleBtn.style.transform = '', 500);
+    }
+
+    // 4. Panggil updateProgressIndicator saat inisialisasi
+    function initFlashcards() {
+        flashcards = hangeulData.map(item => ({
+            char: item.karakter,
+            romaji: item.romanisasi,
+            audio: item.audio
+        }));
+        updateProgressIndicator(); // Tambahkan ini
+        updateFlashcard();
+    }
+    // Di akhir file
+    document.getElementById('shuffle-btn').addEventListener('click', shuffleCards);
+
+    // 1. Inisialisasi Canvas
+    const canvas = document.getElementById('writing-board');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    // 2. Setup Drawing Tools
+    function initWritingBoard() {
+        // Style dasar
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#000000';
+
+        // Event Listeners
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        // Touch support untuk mobile
+        canvas.addEventListener('touchstart', handleTouch);
+        canvas.addEventListener('touchmove', handleTouch);
+        canvas.addEventListener('touchend', stopDrawing);
+
+        // Di dalam initWritingBoard():
+        function showStrokeGuide(char) {
+            const guide = {
+                '가': ['ㄱ', 'ㅏ'], // Urutan stroke
+                '나': ['ㄴ', 'ㅏ']
+            };
+
+            if (guide[char]) {
+                console.log("Tulis berurutan:", guide[char].join(' → '));
+            }
+        }
+
+        // Panggil saat ganti karakter
+        showStrokeGuide('가');
+    }
+
+    // 3. Drawing Functions
+    function startDrawing(e) {
+        isDrawing = true;
+        [lastX, lastY] = getPosition(e);
+    }
+
+    function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        [lastX, lastY] = getPosition(e);
+        ctx.lineTo(lastX, lastY);
+        ctx.stroke();
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+    }
+
+    function handleTouch(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const mouseEvent = new MouseEvent(
+            e.type === 'touchstart' ? 'mousedown' : 'mousemove',
+            {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            }
+        );
+        canvas.dispatchEvent(mouseEvent);
+    }
+
+    function getPosition(e) {
+        const rect = canvas.getBoundingClientRect();
+        return [
+            e.clientX - rect.left,
+            e.clientY - rect.top
+        ];
+    }
+
+    // 4. Kontrol Tambahan
+    document.getElementById('clear-board').addEventListener('click', () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    document.getElementById('check-writing').addEventListener('click', () => {
+        // Contoh sederhana: Bandingkan dengan gambar referensi
+        alert("Fitur pemeriksaan akan diimplementasikan lebih lanjut!");
+    });
+
+    // 5. Toggle Visibility
+    document.getElementById('toggle-writing').addEventListener('click', () => {
+        document.getElementById('writing-practice').classList.toggle('hidden');
+    });
+
+    // 6. Panggil inisialisasi saat halaman ready
+    if (canvas) {
+        initWritingBoard();
+    } else {
+        console.error("Canvas tidak ditemukan!");
+    }
+
+    function resizeCanvas() {
+        const size = Math.min(window.innerWidth - 40, 400);
+        canvas.width = size;
+        canvas.height = size;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas(); // Init pertama
+
+    
 });

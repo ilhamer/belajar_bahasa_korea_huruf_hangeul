@@ -165,3 +165,46 @@ button:hover {
     25% { transform: translateX(-10px); }
     75% { transform: translateX(10px); }
   }
+
+
+  /* Writing Board Styles */
+#writing-practice {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.writing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#writing-board {
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  touch-action: none; /* Penting untuk mobile */
+}
+
+.writing-controls {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#clear-board, #check-writing {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.character-guide {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.writing-btn {
+  background: #5C6BC0 !important;
+  margin: 20px auto;
+}

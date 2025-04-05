@@ -71,6 +71,23 @@
 
         <!-- Tombol Navigasi -->
         <button id="toggle-flashcard" class="flashcard-btn">🎴 Tampilkan Flashcard</button>
+
+        <!-- Di dalam <div class="container"> -->
+        <section id="writing-practice" class="hidden">
+            <h2>✍️ Latihan Menulis</h2>
+            <div class="writing-container">
+                <canvas id="writing-board" width="400" height="400"></canvas>
+                <div class="writing-controls">
+                    <button id="clear-board">🧹 Bersihkan</button>
+                    <button id="check-writing">✓ Periksa</button>
+                    <div class="character-guide">
+                        Contoh: <span id="target-character">가</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <button id="toggle-writing" class="writing-btn">🖌️ Buka Writing Mode</button>
     </div>
 
     <script src="js/script.js"></script>
