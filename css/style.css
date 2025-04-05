@@ -58,3 +58,110 @@ button:hover {
         padding: 8px;
     }
 }
+
+/* Flashcard Styles */
+#flashcard-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .flashcard-container {
+    perspective: 1000px;
+    margin: 20px auto;
+    width: 300px;
+    height: 400px;
+  }
+  
+  .flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .flashcard.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .flashcard .front,
+  .flashcard .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    border-radius: 15px;
+  }
+  
+  .flashcard .front {
+    background: #FFD54F; /* Kuning */
+    color: #212121;
+  }
+  
+  .flashcard .back {
+    background: #81D4FA; /* Biru */
+    color: white;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .flashcard-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .flashcard-btn {
+    background: #4CAF50 !important; /* Hijau */
+    margin: 20px auto;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .flashcard {
+    will-change: transform;
+  }
+
+  /* Progress Indicator */
+.progress-indicator {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #shuffle-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  #shuffle-btn:hover {
+    transform: rotate(180deg);
+  }
+
+
+  /* Animasi kartu saat shuffle */
+.flashcard.shuffle-effect {
+    animation: shake 0.5s;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+  }

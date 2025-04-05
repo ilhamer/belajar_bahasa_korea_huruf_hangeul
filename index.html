@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <header class="header-container">
             <h1 class="header-title">BELAJAR HANGEUL INTERAKTIF</h1>
             <div class="creator-tag">Mr. Ilham the Creator</div>
-          </header>
-        
+        </header>
+
         <div class="table-container">
             <table id="hangeul-table">
                 <thead>
@@ -40,8 +42,38 @@
                 <p id="quiz-result"></p>
             </div>
         </div>
+
+        <!-- Section Flashcard -->
+        <section id="flashcard-section" class="hidden">
+            <h2>📇 Mode Flashcard</h2>
+            <div class="flashcard-container">
+                <div id="flashcard" class="flashcard">
+                    <div class="front">
+                        <span id="flashcard-char">ㄱ</span>
+                    </div>
+                    <div class="back">
+                        <span id="flashcard-romaji">g/k</span>
+                        <button id="play-audio">🔊</button>
+                    </div>
+                </div>
+                <div class="flashcard-controls">
+                    <button id="prev-card">⬅️ Sebelumnya</button>
+                    <button id="next-card">➡️ Berikutnya</button>
+                </div>
+                <!-- Di dalam <div class="flashcard-container"> -->
+                <div class="progress-indicator">
+                    <span id="current-card">1</span> / <span id="total-cards">0</span>
+                    <button id="shuffle-btn">🔀 Acak</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tombol Navigasi -->
+        <button id="toggle-flashcard" class="flashcard-btn">🎴 Tampilkan Flashcard</button>
     </div>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
