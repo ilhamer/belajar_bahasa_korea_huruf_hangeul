@@ -1,0 +1,283 @@
+[
+    {
+      "id": 1,
+      "karakter": "ㅏ",
+      "romanisasi": "a",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/a.mp3"
+    },
+    {
+      "id": 2,
+      "karakter": "ㅑ",
+      "romanisasi": "ya",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/ya.mp3"
+    },
+    {
+      "id": 3,
+      "karakter": "ㅓ",
+      "romanisasi": "eo",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/eo.mp3"
+    },
+    {
+      "id": 4,
+      "karakter": "ㅕ",
+      "romanisasi": "yeo",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/yeo.mp3"
+    },
+    {
+      "id": 5,
+      "karakter": "ㅗ",
+      "romanisasi": "o",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/o.mp3"
+    },
+    {
+      "id": 6,
+      "karakter": "ㅛ",
+      "romanisasi": "yo",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/yo.mp3"
+    },
+    {
+      "id": 7,
+      "karakter": "ㅜ",
+      "romanisasi": "u",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/u.mp3"
+    },
+    {
+      "id": 8,
+      "karakter": "ㅠ",
+      "romanisasi": "yu",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/yu.mp3"
+    },
+    {
+      "id": 9,
+      "karakter": "ㅡ",
+      "romanisasi": "eu",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/eu.mp3"
+    },
+    {
+      "id": 10,
+      "karakter": "ㅣ",
+      "romanisasi": "i",
+      "jenis": "vokal_dasar",
+      "audio": "audio/korean/i.mp3"
+    },
+    {
+      "id": 11,
+      "karakter": "ㅐ",
+      "romanisasi": "ae",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/ae.mp3"
+    },
+    {
+      "id": 12,
+      "karakter": "ㅒ",
+      "romanisasi": "yae",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/yae.mp3"
+    },
+    {
+      "id": 13,
+      "karakter": "ㅔ",
+      "romanisasi": "e",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/e.mp3"
+    },
+    {
+      "id": 14,
+      "karakter": "ㅖ",
+      "romanisasi": "ye",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/ye.mp3"
+    },
+    {
+      "id": 15,
+      "karakter": "ㅘ",
+      "romanisasi": "wa",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/wa.mp3"
+    },
+    {
+      "id": 16,
+      "karakter": "ㅙ",
+      "romanisasi": "wae",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/wae.mp3"
+    },
+    {
+      "id": 17,
+      "karakter": "ㅚ",
+      "romanisasi": "oe",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/oe.mp3"
+    },
+    {
+      "id": 18,
+      "karakter": "ㅝ",
+      "romanisasi": "wo",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/wo.mp3"
+    },
+    {
+      "id": 19,
+      "karakter": "ㅞ",
+      "romanisasi": "we",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/we.mp3"
+    },
+    {
+      "id": 20,
+      "karakter": "ㅟ",
+      "romanisasi": "wi",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/wi.mp3"
+    },
+    {
+      "id": 21,
+      "karakter": "ㅢ",
+      "romanisasi": "ui",
+      "jenis": "vokal_rangkap",
+      "audio": "audio/korean/ui.mp3"
+    },
+    {
+      "id": 22,
+      "karakter": "ㄱ",
+      "romanisasi": "g/k",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/g_k.mp3"
+    },
+    {
+      "id": 23,
+      "karakter": "ㄴ",
+      "romanisasi": "n",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/n.mp3"
+    },
+    {
+      "id": 24,
+      "karakter": "ㄷ",
+      "romanisasi": "d/t",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/d_t.mp3"
+    },
+    {
+      "id": 25,
+      "karakter": "ㄹ",
+      "romanisasi": "r/l",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/r_l.mp3"
+    },
+    {
+      "id": 26,
+      "karakter": "ㅁ",
+      "romanisasi": "m",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/m.mp3"
+    },
+    {
+      "id": 27,
+      "karakter": "ㅂ",
+      "romanisasi": "b/p",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/b_p.mp3"
+    },
+    {
+      "id": 28,
+      "karakter": "ㅅ",
+      "romanisasi": "s",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/s.mp3"
+    },
+    {
+      "id": 29,
+      "karakter": "ㅇ",
+      "romanisasi": "-/ng",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/-_ng.mp3"
+    },
+    {
+      "id": 30,
+      "karakter": "ㅈ",
+      "romanisasi": "j",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/j.mp3"
+    },
+    {
+      "id": 31,
+      "karakter": "ㅊ",
+      "romanisasi": "ch",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/ch.mp3"
+    },
+    {
+      "id": 32,
+      "karakter": "ㅋ",
+      "romanisasi": "k",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/k.mp3"
+    },
+    {
+      "id": 33,
+      "karakter": "ㅌ",
+      "romanisasi": "t",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/t.mp3"
+    },
+    {
+      "id": 34,
+      "karakter": "ㅍ",
+      "romanisasi": "p",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/p.mp3"
+    },
+    {
+      "id": 35,
+      "karakter": "ㅎ",
+      "romanisasi": "h",
+      "jenis": "konsonan_dasar",
+      "audio": "audio/korean/h.mp3"
+    },
+    {
+      "id": 36,
+      "karakter": "ㄲ",
+      "romanisasi": "kk",
+      "jenis": "konsonan_rangkap",
+      "audio": "audio/korean/kk.mp3"
+    },
+    {
+      "id": 37,
+      "karakter": "ㄸ",
+      "romanisasi": "tt",
+      "jenis": "konsonan_rangkap",
+      "audio": "audio/korean/tt.mp3"
+    },
+    {
+      "id": 38,
+      "karakter": "ㅃ",
+      "romanisasi": "pp",
+      "jenis": "konsonan_rangkap",
+      "audio": "audio/korean/pp.mp3"
+    },
+    {
+      "id": 39,
+      "karakter": "ㅆ",
+      "romanisasi": "ss",
+      "jenis": "konsonan_rangkap",
+      "audio": "audio/korean/ss.mp3"
+    },
+    {
+      "id": 40,
+      "karakter": "ㅉ",
+      "romanisasi": "jj",
+      "jenis": "konsonan_rangkap",
+      "audio": "audio/korean/jj.mp3"
+    }
+  ]
+  

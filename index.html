@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Hangeul Interaktif</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✏️ Belajar Hangeul</h1>
+            <p>Klik tombol 🔊 untuk mendengar pelafalan!</p>
+        </header>
+
+        <div class="table-container">
+            <table id="hangeul-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Hangeul</th>
+                        <th>Jenis</th>
+                        <th>Romanisasi</th>
+                        <th>Pelafalan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="quiz-mode">
+            <button id="quiz-btn">🎮 Mode Kuis</button>
+            <div id="quiz-container" class="hidden">
+                <p id="quiz-question">Dengarkan dan tebak huruf:</p>
+                <button id="play-quiz-audio">🔊 Putar Suara</button>
+                <div id="quiz-options"></div>
+                <p id="quiz-result"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

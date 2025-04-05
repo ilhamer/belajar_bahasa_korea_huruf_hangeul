@@ -1,0 +1,60 @@
+:root {
+    --konsonan: #e3f2fd;
+    --vokal: #ffebee;
+    --tombol: #ffd54f;
+    --font-korea: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    font-family: var(--font-korea);
+    background: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.konsonan { background-color: var(--konsonan); }
+.vokal { background-color: var(--vokal); }
+
+button {
+    background-color: var(--tombol);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #ffc107;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 8px;
+    }
+}
